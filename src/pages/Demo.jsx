@@ -10,7 +10,7 @@ import { DataDemoContext } from "../customHooks/DataProvider";
 import { useContext } from "react";
 
 const Demo = () => {
-  const [data, setData] = useContext(DataDemoContext);
+  const [data] = useContext(DataDemoContext);
 
   return (
     <>
