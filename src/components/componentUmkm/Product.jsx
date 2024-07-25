@@ -20,9 +20,13 @@ const Product = ({
     },
     [primary]
   );
+
   return (
     <section
-      className={`${textColor} pt-10 pb-20 max-w-screen-lg mx-auto px-5`}
+      className="pt-10 pb-20 max-w-screen-lg mx-auto px-5"
+      style={{
+        color: textColor.slice(6, -1),
+      }}
     >
       {title ? (
         <p className="text-center mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl ">
@@ -40,7 +44,7 @@ const Product = ({
             } break-words w-full`}
             style={{ backgroundColor: hexObj }}
           >
-            <a href="#" className="">
+            <div>
               <div
                 className="w-80 h-80 rounded-lg"
                 style={{
@@ -50,14 +54,14 @@ const Product = ({
                   backgroundSize: "cover",
                 }}
               ></div>
-            </a>
+            </div>
             <div className={`${v.deskripsi || v.price ? "p-5" : ""}`}>
               {v.name ? (
-                <a href="#">
+                <div>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
                     {v.name}
                   </h5>
-                </a>
+                </div>
               ) : (
                 ""
               )}
@@ -70,7 +74,8 @@ const Product = ({
               )}
               {v.price ? (
                 <p
-                  className={`mb-3 text-xl ${accentColor} font-bold absolute bottom-0`}
+                  className="mb-3 text-xl font-bold absolute bottom-0 "
+                  style={{ color: accentColor.slice(6, -1) }}
                 >
                   {v.price}
                 </p>

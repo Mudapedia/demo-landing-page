@@ -6,11 +6,10 @@ import Product from "../components/componentUmkm/Product";
 import About from "../components/componentUmkm/About";
 import Footer from "../components/componentUmkm/Footer";
 import Location from "../components/componentUmkm/Location";
-import { DataDemoContext } from "../customHooks/DataProvider";
-import { useContext } from "react";
+import testData from "../test";
 
 const Demo = () => {
-  const [data] = useContext(DataDemoContext);
+  const data = JSON.parse(localStorage.getItem("data")) || testData;
 
   return (
     <>
@@ -23,7 +22,9 @@ const Demo = () => {
           />
           <title>{data.title}</title>
         </Helmet>
-        <section className={data.color.backgroundColor}>
+        <section
+          style={{ backgroundColor: data.color.backgroundColor.slice(4, 11) }}
+        >
           <Navbar
             navbarTitle={data.navbarTitle}
             ctaLink={data.ctaLink}

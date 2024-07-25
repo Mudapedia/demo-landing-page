@@ -9,7 +9,11 @@ const Navbar = ({
 }) => {
   return (
     <nav
-      className={`${backgroundColor} fixed w-full z-20 top-0 start-0 border-b border-gray-200 ${textColor}`}
+      className=" fixed w-full z-20 top-0 start-0 border-b border-gray-200"
+      style={{
+        backgroundColor: backgroundColor.slice(4, -1),
+        color: textColor.slice(6, -1),
+      }}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a
@@ -35,7 +39,17 @@ const Navbar = ({
               rel="noreferrer"
               target={ctaLink ? "_blank" : "_self"}
               type="button"
-              className={`${btnTextColor} ${primary} ${hoverColor} font-medium rounded-lg text-sm px-4 py-2 text-center   `}
+              className="font-medium rounded-lg text-sm px-4 py-2 text-center"
+              style={{
+                backgroundColor: primary.slice(4, -1),
+                color: btnTextColor.slice(6, -1),
+              }}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = hoverColor.slice(10, -1);
+              }}
+              onMouseOut={(e) => [
+                (e.target.style.backgroundColor = primary.slice(4, -1)),
+              ]}
             >
               Kontak Kami
             </a>

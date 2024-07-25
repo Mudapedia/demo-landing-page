@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const DataUsaha = () => {
-  const [statusHP, setStatusHP] = useState(false);
+  const [statusHP, setStatusHP] = useState(0);
+
+  const inputHP = useRef();
+
   return (
     <>
       {/* nama usaha */}
@@ -17,6 +20,12 @@ const DataUsaha = () => {
           id="nama-usaha"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           required
+          onChange={(e) => {
+            const d = JSON.parse(localStorage.getItem("data"));
+            d.title = e.target.value;
+            d.navbarTitle = e.target.value || "Nama umkm";
+            localStorage.setItem("data", JSON.stringify(d));
+          }}
         />
       </div>
       {/* nomor HP */}
@@ -34,7 +43,13 @@ const DataUsaha = () => {
             name="kategori-hp"
             defaultChecked
             value={false}
-            onChange={(e) => setStatusHP(e.target.value)}
+            onChange={() => {
+              setStatusHP("");
+
+              const d = JSON.parse(localStorage.getItem("data"));
+              d.ctaLink = null;
+              localStorage.setItem("data", JSON.stringify(d));
+            }}
           />
           <p className="">Tidak Ada</p>
           <input
@@ -42,7 +57,14 @@ const DataUsaha = () => {
             className="mr-1 ml-5"
             name="kategori-hp"
             value={true}
-            onChange={(e) => setStatusHP(e.target.value)}
+            onChange={() => {
+              setStatusHP(1);
+              inputHP.current.value = "";
+
+              const d = JSON.parse(localStorage.getItem("data"));
+              d.ctaLink = null;
+              localStorage.setItem("data", JSON.stringify(d));
+            }}
           />
           <p className="">Aktif WhatsApp</p>
           <input
@@ -50,11 +72,19 @@ const DataUsaha = () => {
             className="mr-1 ml-5"
             name="kategori-hp"
             value={true}
-            onChange={(e) => setStatusHP(e.target.value)}
+            onChange={() => {
+              setStatusHP(2);
+              inputHP.current.value = "";
+
+              const d = JSON.parse(localStorage.getItem("data"));
+              d.ctaLink = null;
+              localStorage.setItem("data", JSON.stringify(d));
+            }}
           />
           <p className="">Tidak Aktif WhatsApp</p>
         </div>
         <input
+          ref={inputHP}
           type="tel"
           id="no-hp"
           pattern="[0-9\s]{13,19}"
@@ -64,6 +94,16 @@ const DataUsaha = () => {
             statusHP ? "" : "hidden"
           } bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5`}
           required
+          onChange={(e) => {
+            let link = "https://wa.me/";
+            if (statusHP === 2) {
+              link = "tel:";
+            }
+
+            const d = JSON.parse(localStorage.getItem("data"));
+            d.ctaLink = e.target.value ? link + e.target.value : null;
+            localStorage.setItem("data", JSON.stringify(d));
+          }}
         />
       </div>
       {/* nama usaha */}
@@ -79,6 +119,11 @@ const DataUsaha = () => {
           id="alamat-usaha"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           required
+          onChange={(e) => {
+            const d = JSON.parse(localStorage.getItem("data"));
+            d.footer.alamat = e.target.value || null;
+            localStorage.setItem("data", JSON.stringify(d));
+          }}
         />
       </div>
       {/* nama usaha */}
@@ -94,6 +139,11 @@ const DataUsaha = () => {
           id="lokasi-map"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           required
+          onChange={(e) => {
+            const d = JSON.parse(localStorage.getItem("data"));
+            d.location = e.target.value || null;
+            localStorage.setItem("data", JSON.stringify(d));
+          }}
         />
       </div>
       {/* keyword pencarian */}
@@ -109,6 +159,11 @@ const DataUsaha = () => {
           id="keyword"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5"
           required
+          onChange={(e) => {
+            const d = JSON.parse(localStorage.getItem("data"));
+            d.keyword = e.target.value ? e.target.value.trim().split("\n") : [];
+            localStorage.setItem("data", JSON.stringify(d));
+          }}
         />
       </div>
       <hr className="my-10" />

@@ -16,6 +16,11 @@ const AboutInput = () => {
             id="about-img"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
+            onChange={(e) => {
+              const d = JSON.parse(localStorage.getItem("data"));
+              d.about.img = e.target.value;
+              localStorage.setItem("data", JSON.stringify(d));
+            }}
           />
         </div>
         <div className="mb-5">
@@ -30,6 +35,11 @@ const AboutInput = () => {
             id="about-tagline"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
+            onChange={(e) => {
+              const d = JSON.parse(localStorage.getItem("data"));
+              d.about.txt = e.target.value;
+              localStorage.setItem("data", JSON.stringify(d));
+            }}
           />
         </div>
         <div className="mb-5">
@@ -44,6 +54,11 @@ const AboutInput = () => {
             id="about-deskripsi"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
+            onChange={(e) => {
+              const d = JSON.parse(localStorage.getItem("data"));
+              d.about.deskripsi = e.target.value;
+              localStorage.setItem("data", JSON.stringify(d));
+            }}
           />
         </div>
       </div>
