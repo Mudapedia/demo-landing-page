@@ -41,7 +41,7 @@ const AboutInput = () => {
             autoComplete="off"
             onChange={(e) => {
               const d = JSON.parse(localStorage.getItem("data"));
-              d.about.txt = e.target.value;
+              d.about.txt = e.target.value || "Buatlah tagline lagi";
               localStorage.setItem("data", JSON.stringify(d));
             }}
           />
@@ -61,7 +61,9 @@ const AboutInput = () => {
             autoComplete="off"
             onChange={(e) => {
               const d = JSON.parse(localStorage.getItem("data"));
-              d.about.deskripsi = e.target.value;
+              d.about.deskripsi =
+                e.target.value ||
+                "Buatlah deskripsi lagi tentang umkm, misalkan sudah berjualan dari tahun berapa, atau cara pembuatan produknya";
               localStorage.setItem("data", JSON.stringify(d));
             }}
           />
