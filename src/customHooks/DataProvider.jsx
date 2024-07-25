@@ -5,20 +5,11 @@ export const DataDemoContext = createContext();
 
 const DataProvider = ({ children }) => {
   const [dataDemo, setDataDemo] = useState({
-    title: "Aneka Es",
+    title: "Nama umkm",
     icon: null,
-    navbarTitle: "Aneka Es",
-    ctaLink: null,
-    keyword: [
-      "Aneka Es",
-      "Es capcin",
-      "Es kopyor",
-      "Es kuwutmelon",
-      "Es buah",
-      "Es campur",
-      "Minuman segar",
-      "Minuman es khas",
-    ],
+    navbarTitle: "Nama umkm",
+    ctaLink: "nohp",
+    keyword: [],
     color: {
       // required
       primary: "bg-[#F87171]",
@@ -31,47 +22,47 @@ const DataProvider = ({ children }) => {
     },
 
     hero: {
-      tagLine: "Segarkan Harimu dengan Aneka Es Sensasi yang Memanjakan!",
+      tagLine: "Buatlah tagline untuk menarik pelanggan",
       deskripsi:
-        "Kami hadir untuk menghadirkan berbagai pilihan minuman es yang siap menyegarkan hari-hari Anda. Dari Es Capcin yang menggugah selera dengan perpaduan kopi dan cincau yang sempurna, hingga Es Kopyor yang menghadirkan sensasi kenikmatan daging kelapa yang lembut dan manis, setiap varian es kami dirancang untuk memuaskan dahaga Anda dengan cita rasa yang istimewa.",
+        "Dekripsi dari umkm, buatkan yang bagus dengan menggunakan bantuan AI anda bisa membuat deskripsi dari umkm lebih bagus.",
       btn: true, // optional
-      btnText: "Pesan sekarang",
-      img: "https://res.cloudinary.com/dtiyid0pi/image/upload/v1717052008/umkm/aneka-es/photo1716684193_znrrtq.jpg",
+      btnText: "Text button untuk hero",
+      img: "https://res.cloudinary.com/dtiyid0pi/image/upload/v1721889516/demo-landing-page/presentasi2_qsjge1.png",
     },
     about: {
       title: "Tentang",
-      txt: "Lebih dari Sekedar Toko Oleh-Oleh",
+      txt: "Buatlah tagline lagi",
 
       deskripsi:
-        "Setiap varian Aneka Es kami dibuat dengan bahan-bahan berkualitas tinggi, menjamin rasa yang enak dan menyehatkan. Dengan Aneka Es kami, hari Anda akan terasa lebih segar dan penuh energi. Temukan kesegaran alami dari Aneka Es, dan jadikan setiap momen lebih istimewa!", // optional
-      img: "https://res.cloudinary.com/dtiyid0pi/image/upload/v1717052008/umkm/aneka-es/photo1716684193_znrrtq.jpg",
+        "Buatlah deskripsi lagi tentang umkm, misalkan sudah berjualan dari tahun berapa, atau cara pembuatan produknya", // optional
+      img: "https://res.cloudinary.com/dtiyid0pi/image/upload/v1721889516/demo-landing-page/presentasi2_qsjge1.png",
       btn: true, // optional
-      btnText: "Pesan sekarang",
+      btnText: "btn untuk tentang",
     },
     product: {
       title: "Produk Kami",
       // required
       data: [
         {
-          name: "Es Capcin",
+          name: "Nama Produk",
           deskripsi:
-            "merupakan perpaduan rasa manis, gurih, dan segar yang tak terlupakan. Es ini terdiri dari es serut, potongan buah nangka, alpukat, tape singkong, dan cincau hitam.",
-          price: "Rp5.000",
-          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqhsvmwNUFBSa32oxdIxXmqfxbOczbMrXVXSUKjt6jysxo4y4eeGfOFKRvAkqVU5mwqwk&usqp=CAU",
+            "Buatlah deskripsi produknya sebagai informasi untuk pelanggan.",
+          price: "Rp harga",
+          img: "https://res.cloudinary.com/dtiyid0pi/image/upload/v1721889757/demo-landing-page/presentasi_1_nagusu.png",
         },
         {
-          name: "Es Kopyor",
+          name: "Nama Produk",
           deskripsi:
-            "Daging kelapa muda yang kenyal dan berair, dipadukan dengan es serut, santan kental manis, dan gula merah cair, menghasilkan rasa manis, gurih, dan segar yang unik.",
-          price: "Rp5.000",
-          img: "https://res.cloudinary.com/dtiyid0pi/image/upload/v1717053046/umkm/aneka-es/IMG-20220814-WA0003_qodrfg.jpg",
+            "Buatlah deskripsi produknya sebagai informasi untuk pelanggan.",
+          price: "Rp harga",
+          img: "https://res.cloudinary.com/dtiyid0pi/image/upload/v1721889757/demo-landing-page/presentasi_1_nagusu.png",
         },
         {
-          name: "Es Kuwut Melon",
+          name: "Nama Produk",
           deskripsi:
-            "hidangan penutup khas Bali yang memadukan kesegaran melon dan kelapa muda dengan aroma khas jeruk nipis.",
-          price: "Rp5.000",
-          img: "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/indizone/2022/03/20/8JsQ6yO/resep-es-kuwut-melon-minuman-segar-cocok-untuk-buka-puasa40.jpg",
+            "Buatlah deskripsi produknya sebagai informasi untuk pelanggan.",
+          price: "Rp harga",
+          img: "https://res.cloudinary.com/dtiyid0pi/image/upload/v1721889757/demo-landing-page/presentasi_1_nagusu.png",
         },
       ],
     },
@@ -79,7 +70,7 @@ const DataProvider = ({ children }) => {
       "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d7897.7971805397265!2d114.37598231346807!3d-8.21295283091228!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwMTInNDYuNiJTIDExNMKwMjInMzMuNSJF!5e0!3m2!1sid!2sid!4v1717053739204!5m2!1sid!2sid",
     footer: {
       noHp: null,
-      alamat: "Blambangan",
+      alamat: "Alamat",
     },
   });
 
