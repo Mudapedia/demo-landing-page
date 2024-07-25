@@ -127,6 +127,7 @@ const ProductInput = () => {
               id={`produk-img-1`}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               required
+              autoComplete="off"
               onChange={(e) => {
                 const d = JSON.parse(localStorage.getItem("data"));
                 d.product.data[0].img = e.target.value
@@ -148,6 +149,7 @@ const ProductInput = () => {
               id={`nama-produk-1`}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               required
+              autoComplete="off"
               onChange={(e) => {
                 const d = JSON.parse(localStorage.getItem("data"));
                 d.product.data[0].name = e.target.value
@@ -169,6 +171,7 @@ const ProductInput = () => {
               id={`deskripsi-produk-1`}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               required
+              autoComplete="off"
               onChange={(e) => {
                 const d = JSON.parse(localStorage.getItem("data"));
                 d.product.data[0].deskripsi = e.target.value
@@ -190,6 +193,7 @@ const ProductInput = () => {
               id={`harga-produk-1`}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               required
+              autoComplete="off"
               onChange={(e) => {
                 const d = JSON.parse(localStorage.getItem("data"));
                 d.product.data[0].price = e.target.value
@@ -217,6 +221,7 @@ const ProductInput = () => {
                 id={`produk-img-2`}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required
+                autoComplete="off"
                 onChange={(e) => {
                   const d = JSON.parse(localStorage.getItem("data"));
                   d.product.data[1].img = e.target.value
@@ -238,6 +243,7 @@ const ProductInput = () => {
                 id={`nama-produk-2`}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required
+                autoComplete="off"
                 onChange={(e) => {
                   const d = JSON.parse(localStorage.getItem("data"));
                   d.product.data[1].name = e.target.value
@@ -259,6 +265,7 @@ const ProductInput = () => {
                 id={`deskripsi-produk-2`}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required
+                autoComplete="off"
                 onChange={(e) => {
                   const d = JSON.parse(localStorage.getItem("data"));
                   d.product.data[1].deskripsi = e.target.value
@@ -280,6 +287,7 @@ const ProductInput = () => {
                 id={`harga-produk-2`}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required
+                autoComplete="off"
                 onChange={(e) => {
                   const d = JSON.parse(localStorage.getItem("data"));
                   d.product.data[1].price = e.target.value
@@ -310,6 +318,7 @@ const ProductInput = () => {
                 id={`produk-img-3`}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required
+                autoComplete="off"
                 onChange={(e) => {
                   const d = JSON.parse(localStorage.getItem("data"));
                   d.product.data[2].img = e.target.value
@@ -331,6 +340,7 @@ const ProductInput = () => {
                 id={`nama-produk-3`}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required
+                autoComplete="off"
                 onChange={(e) => {
                   const d = JSON.parse(localStorage.getItem("data"));
                   d.product.data[2].name = e.target.value
@@ -352,6 +362,7 @@ const ProductInput = () => {
                 id={`deskripsi-produk-3`}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required
+                autoComplete="off"
                 onChange={(e) => {
                   const d = JSON.parse(localStorage.getItem("data"));
                   d.product.data[2].deskripsi = e.target.value
@@ -373,6 +384,7 @@ const ProductInput = () => {
                 id={`harga-produk-3`}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required
+                autoComplete="off"
                 onChange={(e) => {
                   const d = JSON.parse(localStorage.getItem("data"));
                   d.product.data[2].price = e.target.value

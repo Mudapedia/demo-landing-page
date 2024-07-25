@@ -20,6 +20,7 @@ const Demo = () => {
             type="image/x-icon"
             href={data.icon || ""}
           />
+          <meta httpEquiv="refresh" content="1"></meta>
           <title>{data.title}</title>
         </Helmet>
         <section
