@@ -41,7 +41,8 @@ const HeroInput = () => {
             autoComplete="off"
             onChange={(e) => {
               const d = JSON.parse(localStorage.getItem("data"));
-              d.hero.tagLine = e.target.value;
+              d.hero.tagLine =
+                e.target.value || "Buatlah tagline untuk menarik pelanggan";
               localStorage.setItem("data", JSON.stringify(d));
             }}
           />
@@ -61,7 +62,9 @@ const HeroInput = () => {
             autoComplete="off"
             onChange={(e) => {
               const d = JSON.parse(localStorage.getItem("data"));
-              d.hero.deskripsi = e.target.value;
+              d.hero.deskripsi =
+                e.target.value ||
+                "Dekripsi dari umkm, buatkan yang bagus dengan menggunakan bantuan AI anda bisa membuat deskripsi dari umkm lebih bagus.";
               localStorage.setItem("data", JSON.stringify(d));
             }}
           />

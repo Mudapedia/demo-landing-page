@@ -20,7 +20,7 @@ const testData = {
     deskripsi:
       "Dekripsi dari umkm, buatkan yang bagus dengan menggunakan bantuan AI anda bisa membuat deskripsi dari umkm lebih bagus.",
     btn: true, // optional
-    btnText: "Text button untuk hero",
+    btnText: "Pesan sekarang",
     img: "https://res.cloudinary.com/dtiyid0pi/image/upload/v1721889516/demo-landing-page/presentasi2_qsjge1.png",
   },
   about: {
@@ -31,7 +31,7 @@ const testData = {
       "Buatlah deskripsi lagi tentang umkm, misalkan sudah berjualan dari tahun berapa, atau cara pembuatan produknya", // optional
     img: "https://res.cloudinary.com/dtiyid0pi/image/upload/v1721889516/demo-landing-page/presentasi2_qsjge1.png",
     btn: true, // optional
-    btnText: "btn untuk tentang",
+    btnText: "Pesan sekarang",
   },
   product: {
     title: "Produk Kami",
