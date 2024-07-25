@@ -5,7 +5,7 @@ const NotFound = () => {
         <section className="relative flex justify-center">
           <img src="/spongebob.gif" alt="notfound" />
           <h1 className="font-bold text-4xl text-white absolute bottom-10 text-shadow">
-            Ga ada, Ga da
+            Ga ada, Ga ada
           </h1>
         </section>
         <h1 className="text-center font-bold text-xl">
