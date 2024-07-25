@@ -19,7 +19,9 @@ const AboutInput = () => {
             autoComplete="off"
             onChange={(e) => {
               const d = JSON.parse(localStorage.getItem("data"));
-              d.about.img = e.target.value;
+              d.about.img =
+                e.target.value ||
+                "https://res.cloudinary.com/dtiyid0pi/image/upload/v1721889516/demo-landing-page/presentasi2_qsjge1.png";
               localStorage.setItem("data", JSON.stringify(d));
             }}
           />
