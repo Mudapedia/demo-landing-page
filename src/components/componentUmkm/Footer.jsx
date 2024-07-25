@@ -7,7 +7,13 @@ const Footer = ({
   ctaLink,
 }) => {
   return (
-    <footer className={`p-4 ${secondary} md:p-8 lg:p-10  ${textColor}`}>
+    <footer
+      className="p-4  md:p-8 lg:p-10"
+      style={{
+        backgroundColor: secondary.slice(4, -1),
+        color: textColor.slice(6, -1),
+      }}
+    >
       <div className="mx-auto max-w-screen-xl text-center">
         <a
           href={ctaLink ? ctaLink : "#"}

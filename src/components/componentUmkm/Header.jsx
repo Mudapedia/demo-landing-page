@@ -9,7 +9,12 @@ const Header = ({
   color: { textColor, primary, btnTextColor, hoverColor },
 }) => {
   return (
-    <header className={`${textColor} pt-20`}>
+    <header
+      className="pt-20"
+      style={{
+        color: textColor.slice(6, 13),
+      }}
+    >
       <div className="flex flex-col  md:flex-row max-w-screen-xl px-4 py-8 mx-auto gap-8 lg:py-16">
         <div className="lg:mt-0 md:order-2">
           <img
@@ -35,7 +40,17 @@ const Header = ({
               href={ctaLink ? ctaLink : "#"}
               rel="noreferrer"
               target={ctaLink ? "_blank" : "_self"}
-              className={`${btnTextColor} ${primary} ${hoverColor}  font-medium rounded-lg text-sm px-4 py-2 text-center`}
+              className=" font-medium rounded-lg text-sm px-4 py-2 text-center"
+              style={{
+                backgroundColor: primary.slice(4, -1),
+                color: btnTextColor.slice(6, -1),
+              }}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = hoverColor.slice(10, -1);
+              }}
+              onMouseOut={(e) => [
+                (e.target.style.backgroundColor = primary.slice(4, -1)),
+              ]}
             >
               {btnText}
             </a>

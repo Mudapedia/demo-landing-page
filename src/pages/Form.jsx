@@ -3,8 +3,14 @@ import Style from "../components/formInput/Style";
 import HeroInput from "../components/formInput/HeroInput";
 import ProductInput from "../components/formInput/ProductInput";
 import AboutInput from "../components/formInput/AboutInput";
+import testData from "../test";
+import { useEffect } from "react";
 
 const Form = () => {
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(testData));
+  }, []);
+
   return (
     <section className="bg-white h-screen max-h-screen py-10 px-20">
       <form className="max-w-lg mx-auto">

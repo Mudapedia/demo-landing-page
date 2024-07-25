@@ -6,11 +6,16 @@ const About = ({
   color: { textColor, primary, btnTextColor, hoverColor },
 }) => {
   return (
-    <section className={`max-w-screen-xl mx-auto  ${textColor} mt-24`}>
+    <section
+      className="max-w-screen-xl mx-auto mt-24"
+      style={{
+        color: textColor.slice(6, 13),
+      }}
+    >
       {title ? (
         <p className="text-center mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl ">
-        {title}
-      </p>
+          {title}
+        </p>
       ) : (
         ""
       )}
@@ -36,7 +41,17 @@ const About = ({
                 href={ctaLink ? ctaLink : "#"}
                 rel="noreferrer"
                 target={ctaLink ? "_blank" : "_self"}
-                className={`${btnTextColor} ${primary} ${hoverColor}  font-medium rounded-lg text-sm px-4 py-2 text-center`}
+                className="font-medium rounded-lg text-sm px-4 py-2 text-center"
+                style={{
+                  backgroundColor: primary.slice(4, -1),
+                  color: btnTextColor.slice(6, -1),
+                }}
+                onMouseOver={(e) => {
+                  e.target.style.backgroundColor = hoverColor.slice(10, -1);
+                }}
+                onMouseOut={(e) => [
+                  (e.target.style.backgroundColor = primary.slice(4, -1)),
+                ]}
               >
                 {btnText}
               </a>
