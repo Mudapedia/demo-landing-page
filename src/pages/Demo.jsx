@@ -6,8 +6,12 @@ import Product from "../components/componentUmkm/Product";
 import About from "../components/componentUmkm/About";
 import Footer from "../components/componentUmkm/Footer";
 import Location from "../components/componentUmkm/Location";
+import { DataDemoContext } from "../customHooks/DataProvider";
+import { useContext } from "react";
 
-const Demo = ({ data }) => {
+const Demo = () => {
+  const [data, setData] = useContext(DataDemoContext);
+
   return (
     <>
       <HelmetProvider>
