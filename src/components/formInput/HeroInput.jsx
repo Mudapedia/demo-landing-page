@@ -16,6 +16,7 @@ const HeroInput = () => {
             id="hero-img"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
+            autoComplete="off"
             onChange={(e) => {
               const d = JSON.parse(localStorage.getItem("data"));
               d.hero.img = e.target.value;
@@ -35,6 +36,7 @@ const HeroInput = () => {
             id="hero-tagline"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
+            autoComplete="off"
             onChange={(e) => {
               const d = JSON.parse(localStorage.getItem("data"));
               d.hero.tagLine = e.target.value;
@@ -54,6 +56,7 @@ const HeroInput = () => {
             id="hero-deskripsi"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
+            autoComplete="off"
             onChange={(e) => {
               const d = JSON.parse(localStorage.getItem("data"));
               d.hero.deskripsi = e.target.value;
