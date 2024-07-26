@@ -22,40 +22,53 @@ const Style = () => {
   const textColor = useRef();
   const textColorInputText = useRef();
 
-  useEffect(() => {
+  const asignColor = () => {
+    const color = JSON.parse(localStorage.getItem("data")).color;
+
     if (primary.current && primaryInputText.current) {
-      primaryInputText.current.defaultValue =
-        primary.current.value.toUpperCase();
+      primary.current.value = color.primary.slice(4, -1);
+      primaryInputText.current.defaultValue = color.primary.slice(4, -1);
     }
 
     if (secondary.current && secondaryInputText.current) {
-      secondaryInputText.current.defaultValue =
-        secondary.current.value.toUpperCase();
+      secondary.current.value = color.secondary.slice(4, -1);
+      secondaryInputText.current.defaultValue = color.secondary.slice(4, -1);
     }
 
     if (background.current && backgroundInputText.current) {
-      backgroundInputText.current.defaultValue =
-        background.current.value.toUpperCase();
+      background.current.value = color.backgroundColor.slice(4, -1);
+      backgroundInputText.current.defaultValue = color.backgroundColor
+        .slice(4, -1)
+        .toUpperCase();
     }
 
     if (btnHover.current && btnHoverInputText.current) {
-      btnHoverInputText.current.defaultValue =
-        btnHover.current.value.toUpperCase();
+      btnHover.current.value = color.hoverColor.slice(10, -1);
+      btnHoverInputText.current.defaultValue = color.hoverColor
+        .slice(10, -1)
+        .toUpperCase();
     }
 
     if (accent.current && accentInputText.current) {
-      accentInputText.current.defaultValue = accent.current.value.toUpperCase();
+      accent.current.value = color.accentColor.slice(6, -1);
+      accentInputText.current.defaultValue = color.accentColor.slice(6, -1);
     }
 
     if (btnText.current && btnTextInputText.current) {
-      btnTextInputText.current.defaultValue =
-        btnText.current.value.toUpperCase();
+      btnText.current.value = color.btnTextColor.slice(6, -1);
+      btnTextInputText.current.defaultValue = color.btnTextColor
+        .slice(6, -1)
+        .toUpperCase();
     }
 
     if (textColor.current && textColorInputText.current) {
-      textColorInputText.current.defaultValue =
-        textColor.current.value.toUpperCase();
+      textColor.current.value = color.textColor.slice(6, -1);
+      textColorInputText.current.defaultValue = color.textColor.slice(6, -1);
     }
+  };
+
+  useEffect(() => {
+    asignColor();
   }, []);
 
   return (
@@ -93,10 +106,21 @@ const Style = () => {
                 className="border w-20 px-1"
                 defaultValue={primary.current?.value}
                 pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+                maxLength={7}
+                required
                 onChange={() => {
                   primary.current.value = primaryInputText.current.value;
                   const d = JSON.parse(localStorage.getItem("data"));
                   d.color.primary = `bg-[${primaryInputText.current.value}]`;
+                  localStorage.setItem("data", JSON.stringify(d));
+                }}
+                onPaste={(e) => {
+                  const dataPaste = e.clipboardData.getData("text/plain");
+                  primary.current.value = dataPaste;
+                  primaryInputText.current.value = dataPaste;
+
+                  const d = JSON.parse(localStorage.getItem("data"));
+                  d.color.primary = `bg-[${dataPaste}]`;
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
               />
@@ -129,11 +153,21 @@ const Style = () => {
                 ref={secondaryInputText}
                 type="text"
                 className="border w-20 px-1"
+                maxLength={7}
                 onChange={() => {
                   console.log(secondaryInputText.current.value);
                   secondary.current.value = secondaryInputText.current.value;
                   const d = JSON.parse(localStorage.getItem("data"));
                   d.color.secondary = `bg-[${secondaryInputText.current.value}]`;
+                  localStorage.setItem("data", JSON.stringify(d));
+                }}
+                onPaste={(e) => {
+                  const dataPaste = e.clipboardData.getData("text/plain");
+                  secondary.current.value = dataPaste;
+                  secondaryInputText.current.value = dataPaste;
+
+                  const d = JSON.parse(localStorage.getItem("data"));
+                  d.color.secondary = `bg-[${dataPaste}]`;
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
               />
@@ -166,10 +200,20 @@ const Style = () => {
                 ref={backgroundInputText}
                 type="text"
                 className="border w-20 px-1"
+                maxLength={7}
                 onChange={() => {
                   background.current.value = backgroundInputText.current.value;
                   const d = JSON.parse(localStorage.getItem("data"));
                   d.color.backgroundColor = `bg-[${backgroundInputText.current.value}]`;
+                  localStorage.setItem("data", JSON.stringify(d));
+                }}
+                onPaste={(e) => {
+                  const dataPaste = e.clipboardData.getData("text/plain");
+                  background.current.value = dataPaste;
+                  backgroundInputText.current.value = dataPaste;
+
+                  const d = JSON.parse(localStorage.getItem("data"));
+                  d.color.backgroundColor = `bg-[${dataPaste}]`;
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
               />
@@ -202,10 +246,20 @@ const Style = () => {
                 ref={btnHoverInputText}
                 type="text"
                 className="border w-20 px-1"
+                maxLength={7}
                 onChange={() => {
                   btnHover.current.value = btnHoverInputText.current.value;
                   const d = JSON.parse(localStorage.getItem("data"));
                   d.color.hoverColor = `hover:bg-[${btnHoverInputText.current.value}]`;
+                  localStorage.setItem("data", JSON.stringify(d));
+                }}
+                onPaste={(e) => {
+                  const dataPaste = e.clipboardData.getData("text/plain");
+                  btnHover.current.value = dataPaste;
+                  btnHoverInputText.current.value = dataPaste;
+
+                  const d = JSON.parse(localStorage.getItem("data"));
+                  d.color.hoverColor = `hover:bg-[${dataPaste}]`;
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
               />
@@ -238,10 +292,20 @@ const Style = () => {
                 ref={accentInputText}
                 type="text"
                 className="border w-20 px-1"
+                maxLength={7}
                 onChange={() => {
                   accent.current.value = accentInputText.current.value;
                   const d = JSON.parse(localStorage.getItem("data"));
                   d.color.accentColor = `text-[${accentInputText.current.value}]`;
+                  localStorage.setItem("data", JSON.stringify(d));
+                }}
+                onPaste={(e) => {
+                  const dataPaste = e.clipboardData.getData("text/plain");
+                  accent.current.value = dataPaste;
+                  accentInputText.current.value = dataPaste;
+
+                  const d = JSON.parse(localStorage.getItem("data"));
+                  d.color.accentColor = `text-[${dataPaste}]`;
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
               />
@@ -274,10 +338,20 @@ const Style = () => {
                 ref={btnTextInputText}
                 type="text"
                 className="border w-20 px-1"
+                maxLength={7}
                 onChange={() => {
                   btnText.current.value = btnTextInputText.current.value;
                   const d = JSON.parse(localStorage.getItem("data"));
-                  d.color.btnTextColor = `bg-[${btnTextInputText.current.value}]`;
+                  d.color.btnTextColor = `text-[${btnTextInputText.current.value}]`;
+                  localStorage.setItem("data", JSON.stringify(d));
+                }}
+                onPaste={(e) => {
+                  const dataPaste = e.clipboardData.getData("text/plain");
+                  btnText.current.value = dataPaste;
+                  btnTextInputText.current.value = dataPaste;
+
+                  const d = JSON.parse(localStorage.getItem("data"));
+                  d.color.btnTextColor = `text-[${dataPaste}]`;
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
               />
@@ -310,10 +384,20 @@ const Style = () => {
                 ref={textColorInputText}
                 type="text"
                 className="border w-20 px-1"
+                maxLength={7}
                 onChange={() => {
                   textColor.current.value = textColorInputText.current.value;
                   const d = JSON.parse(localStorage.getItem("data"));
-                  d.color.textColor = `bg-[${textColorInputText.current.value}]`;
+                  d.color.textColor = `text-[${textColorInputText.current.value}]`;
+                  localStorage.setItem("data", JSON.stringify(d));
+                }}
+                onPaste={(e) => {
+                  const dataPaste = e.clipboardData.getData("text/plain");
+                  textColor.current.value = dataPaste;
+                  textColorInputText.current.value = dataPaste;
+
+                  const d = JSON.parse(localStorage.getItem("data"));
+                  d.color.textColor = `text-[${dataPaste}]`;
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
               />
