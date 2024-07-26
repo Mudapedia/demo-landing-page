@@ -48,6 +48,7 @@ const DataUsaha = () => {
 
               const d = JSON.parse(localStorage.getItem("data"));
               d.ctaLink = null;
+              d.footer.noHp = null;
               localStorage.setItem("data", JSON.stringify(d));
             }}
           />
@@ -63,6 +64,7 @@ const DataUsaha = () => {
 
               const d = JSON.parse(localStorage.getItem("data"));
               d.ctaLink = null;
+              d.footer.noHp = null;
               localStorage.setItem("data", JSON.stringify(d));
             }}
           />
@@ -78,6 +80,7 @@ const DataUsaha = () => {
 
               const d = JSON.parse(localStorage.getItem("data"));
               d.ctaLink = null;
+              d.footer.noHp = null;
               localStorage.setItem("data", JSON.stringify(d));
             }}
           />
@@ -102,6 +105,9 @@ const DataUsaha = () => {
 
             const d = JSON.parse(localStorage.getItem("data"));
             d.ctaLink = e.target.value ? link + e.target.value : null;
+            d.footer.noHp = e.target.value
+              ? `08${e.target.value.slice(2)}`
+              : null;
             localStorage.setItem("data", JSON.stringify(d));
           }}
         />
