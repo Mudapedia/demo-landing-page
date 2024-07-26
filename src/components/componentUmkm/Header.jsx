@@ -46,7 +46,6 @@ const Header = ({
                 color: btnTextColor.slice(6, -1),
               }}
               onMouseOver={(e) => {
-                console.log(hoverColor);
                 e.target.style.backgroundColor = hoverColor.slice(10, -1);
               }}
               onMouseOut={(e) => [
