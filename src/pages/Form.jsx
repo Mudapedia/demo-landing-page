@@ -16,7 +16,7 @@ const Form = () => {
     e.preventDefault();
 
     if (!localStorage.getItem("data")) {
-      alert("mana filenya ?");
+      alert("Hacker jangan mencuri!!!");
       return;
     }
 
