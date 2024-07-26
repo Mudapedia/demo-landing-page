@@ -24,8 +24,12 @@ const Demo = () => {
           <title>{data.title}</title>
         </Helmet>
         <section
+          className="relative min-h-screen h-auto"
           style={{ backgroundColor: data.color.backgroundColor.slice(4, 11) }}
         >
+          <button className="z-50 bg-blue-400 fixed bottom-10 right-10 text-gray-50 py-2 px-2 rounded-md font-bold text-sm">
+            Update <br /> Preview
+          </button>
           <Navbar
             navbarTitle={data.navbarTitle}
             ctaLink={data.ctaLink}

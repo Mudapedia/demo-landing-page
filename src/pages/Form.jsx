@@ -5,6 +5,7 @@ import ProductInput from "../components/formInput/ProductInput";
 import AboutInput from "../components/formInput/AboutInput";
 import testData from "../test";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Form = () => {
   useEffect(() => {
@@ -32,6 +33,12 @@ const Form = () => {
 
   return (
     <section className="bg-white h-screen max-h-screen py-10 px-20">
+      <Link
+        to="/demo"
+        className="z-50 bg-blue-400 fixed bottom-10 right-10 text-gray-50 py-2 px-2 rounded-md font-bold text-sm"
+      >
+        Halaman <br /> Preview
+      </Link>
       <form className="max-w-lg mx-auto" onSubmit={btnExport}>
         <div>
           <DataUsaha />
