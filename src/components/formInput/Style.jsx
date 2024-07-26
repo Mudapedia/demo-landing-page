@@ -115,7 +115,11 @@ const Style = () => {
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
                 onPaste={(e) => {
-                  const dataPaste = e.clipboardData.getData("text/plain");
+                  let dataPaste = e.clipboardData.getData("text/plain");
+                  if (dataPaste[0] != "#") {
+                    dataPaste = `#${dataPaste}`;
+                  }
+
                   primary.current.value = dataPaste;
                   primaryInputText.current.value = dataPaste;
 
@@ -162,7 +166,10 @@ const Style = () => {
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
                 onPaste={(e) => {
-                  const dataPaste = e.clipboardData.getData("text/plain");
+                  let dataPaste = e.clipboardData.getData("text/plain");
+                  if (dataPaste[0] != "#") {
+                    dataPaste = `#${dataPaste}`;
+                  }
                   secondary.current.value = dataPaste;
                   secondaryInputText.current.value = dataPaste;
 
@@ -208,7 +215,10 @@ const Style = () => {
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
                 onPaste={(e) => {
-                  const dataPaste = e.clipboardData.getData("text/plain");
+                  let dataPaste = e.clipboardData.getData("text/plain");
+                  if (dataPaste[0] != "#") {
+                    dataPaste = `#${dataPaste}`;
+                  }
                   background.current.value = dataPaste;
                   backgroundInputText.current.value = dataPaste;
 
@@ -254,7 +264,10 @@ const Style = () => {
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
                 onPaste={(e) => {
-                  const dataPaste = e.clipboardData.getData("text/plain");
+                  let dataPaste = e.clipboardData.getData("text/plain");
+                  if (dataPaste[0] != "#") {
+                    dataPaste = `#${dataPaste}`;
+                  }
                   btnHover.current.value = dataPaste;
                   btnHoverInputText.current.value = dataPaste;
 
@@ -300,7 +313,10 @@ const Style = () => {
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
                 onPaste={(e) => {
-                  const dataPaste = e.clipboardData.getData("text/plain");
+                  let dataPaste = e.clipboardData.getData("text/plain");
+                  if (dataPaste[0] != "#") {
+                    dataPaste = `#${dataPaste}`;
+                  }
                   accent.current.value = dataPaste;
                   accentInputText.current.value = dataPaste;
 
@@ -346,7 +362,10 @@ const Style = () => {
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
                 onPaste={(e) => {
-                  const dataPaste = e.clipboardData.getData("text/plain");
+                  let dataPaste = e.clipboardData.getData("text/plain");
+                  if (dataPaste[0] != "#") {
+                    dataPaste = `#${dataPaste}`;
+                  }
                   btnText.current.value = dataPaste;
                   btnTextInputText.current.value = dataPaste;
 
@@ -392,7 +411,10 @@ const Style = () => {
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
                 onPaste={(e) => {
-                  const dataPaste = e.clipboardData.getData("text/plain");
+                  let dataPaste = e.clipboardData.getData("text/plain");
+                  if (dataPaste[0] != "#") {
+                    dataPaste = `#${dataPaste}`;
+                  }
                   textColor.current.value = dataPaste;
                   textColorInputText.current.value = dataPaste;
 
