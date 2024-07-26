@@ -11,9 +11,28 @@ const Form = () => {
     localStorage.setItem("data", JSON.stringify(testData));
   }, []);
 
+  const btnExport = (e) => {
+    e.preventDefault();
+
+    if (!localStorage.getItem("data")) {
+      alert("mana filenya ?");
+      return;
+    }
+
+    const jsString = `const data = ${localStorage.getItem("data")}`;
+    const blob = new Blob([jsString], {
+      type: "application/javascript",
+    });
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "data.js";
+    link.click();
+  };
+
   return (
     <section className="bg-white h-screen max-h-screen py-10 px-20">
-      <form className="max-w-lg mx-auto">
+      <form className="max-w-lg mx-auto" onSubmit={btnExport}>
         <div>
           <DataUsaha />
           <Style />

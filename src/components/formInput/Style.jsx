@@ -205,7 +205,7 @@ const Style = () => {
                 onChange={() => {
                   btnHover.current.value = btnHoverInputText.current.value;
                   const d = JSON.parse(localStorage.getItem("data"));
-                  d.color.hoverColor = `bg-[${btnHoverInputText.current.value}]`;
+                  d.color.hoverColor = `hover:bg-[${btnHoverInputText.current.value}]`;
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
               />
@@ -241,7 +241,7 @@ const Style = () => {
                 onChange={() => {
                   accent.current.value = accentInputText.current.value;
                   const d = JSON.parse(localStorage.getItem("data"));
-                  d.color.accentColor = `bg-[${accentInputText.current.value}]`;
+                  d.color.accentColor = `text-[${accentInputText.current.value}]`;
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
               />
@@ -313,7 +313,7 @@ const Style = () => {
                 onChange={() => {
                   textColor.current.value = textColorInputText.current.value;
                   const d = JSON.parse(localStorage.getItem("data"));
-                  d.color.primary = `bg-[${textColorInputText.current.value}]`;
+                  d.color.textColor = `bg-[${textColorInputText.current.value}]`;
                   localStorage.setItem("data", JSON.stringify(d));
                 }}
               />
