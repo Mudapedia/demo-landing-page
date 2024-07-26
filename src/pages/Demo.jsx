@@ -7,9 +7,12 @@ import About from "../components/componentUmkm/About";
 import Footer from "../components/componentUmkm/Footer";
 import Location from "../components/componentUmkm/Location";
 import testData from "../test";
+import { useState } from "react";
 
 const Demo = () => {
-  const data = JSON.parse(localStorage.getItem("data")) || testData;
+  const [data, setData] = useState(
+    JSON.parse(localStorage.getItem("data")) || testData
+  );
 
   return (
     <>
@@ -20,14 +23,18 @@ const Demo = () => {
             type="image/x-icon"
             href={data.icon || ""}
           />
-          <meta httpEquiv="refresh" content="1"></meta>
           <title>{data.title}</title>
         </Helmet>
         <section
           className="relative min-h-screen h-auto"
           style={{ backgroundColor: data.color.backgroundColor.slice(4, 11) }}
         >
-          <button className="z-50 bg-blue-400 fixed bottom-10 right-10 text-gray-50 py-2 px-2 rounded-md font-bold text-sm">
+          <button
+            className="z-50 bg-blue-400 fixed bottom-10 right-10 text-gray-50 py-2 px-2 rounded-md font-bold text-sm"
+            onClick={() => {
+              setData(JSON.parse(localStorage.getItem("data")) || testData);
+            }}
+          >
             Update <br /> Preview
           </button>
           <Navbar
