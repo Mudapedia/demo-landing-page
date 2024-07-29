@@ -54,6 +54,17 @@ const Form = () => {
           </button>
         </div>
       </form>
+      <section className="max-w-lg mx-auto pb-5 text-gray-400 text-sm flex gap-1">
+        <p>Created By</p>{" "}
+        <section className="flex gap-1">
+          <a href="https://github.com/Muizzuddin-github" target="_blank">
+            @Muiz
+          </a>
+          <a href="https://github.com/IIQball" target="_blank">
+            @Iqbal
+          </a>
+        </section>
+      </section>
     </section>
   );
 };
