@@ -10,12 +10,9 @@ const ProductInput = () => {
       <div className="mb-5">
         <h1 className="text-xl font-bold mb-5">Konten Produk Section</h1>
         <div className="mb-5">
-          <label
-            htmlFor="jumlah-produk"
-            className="block mb-2 text-sm font-medium text-gray-900"
-          >
+          <p className="block mb-2 text-sm font-medium text-gray-900">
             Jumlah Produk
-          </label>
+          </p>
           {/* radio selection */}
           <div className="flex text-xs my-3">
             <input

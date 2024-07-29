@@ -23,47 +23,47 @@ const Style = () => {
   const textColorInputText = useRef();
 
   const asignColor = () => {
-    const color = JSON.parse(localStorage.getItem("data")).color;
+    const color = JSON.parse(localStorage.getItem("data"))?.color;
 
     if (primary.current && primaryInputText.current) {
-      primary.current.value = color.primary.slice(4, -1);
-      primaryInputText.current.defaultValue = color.primary.slice(4, -1);
+      primary.current.value = color?.primary.slice(4, -1);
+      primaryInputText.current.defaultValue = color?.primary.slice(4, -1);
     }
 
     if (secondary.current && secondaryInputText.current) {
-      secondary.current.value = color.secondary.slice(4, -1);
-      secondaryInputText.current.defaultValue = color.secondary.slice(4, -1);
+      secondary.current.value = color?.secondary.slice(4, -1);
+      secondaryInputText.current.defaultValue = color?.secondary.slice(4, -1);
     }
 
     if (background.current && backgroundInputText.current) {
-      background.current.value = color.backgroundColor.slice(4, -1);
-      backgroundInputText.current.defaultValue = color.backgroundColor
+      background.current.value = color?.backgroundColor.slice(4, -1);
+      backgroundInputText.current.defaultValue = color?.backgroundColor
         .slice(4, -1)
         .toUpperCase();
     }
 
     if (btnHover.current && btnHoverInputText.current) {
-      btnHover.current.value = color.hoverColor.slice(10, -1);
-      btnHoverInputText.current.defaultValue = color.hoverColor
+      btnHover.current.value = color?.hoverColor.slice(10, -1);
+      btnHoverInputText.current.defaultValue = color?.hoverColor
         .slice(10, -1)
         .toUpperCase();
     }
 
     if (accent.current && accentInputText.current) {
-      accent.current.value = color.accentColor.slice(6, -1);
-      accentInputText.current.defaultValue = color.accentColor.slice(6, -1);
+      accent.current.value = color?.accentColor.slice(6, -1);
+      accentInputText.current.defaultValue = color?.accentColor.slice(6, -1);
     }
 
     if (btnText.current && btnTextInputText.current) {
-      btnText.current.value = color.btnTextColor.slice(6, -1);
-      btnTextInputText.current.defaultValue = color.btnTextColor
+      btnText.current.value = color?.btnTextColor.slice(6, -1);
+      btnTextInputText.current.defaultValue = color?.btnTextColor
         .slice(6, -1)
         .toUpperCase();
     }
 
     if (textColor.current && textColorInputText.current) {
-      textColor.current.value = color.textColor.slice(6, -1);
-      textColorInputText.current.defaultValue = color.textColor.slice(6, -1);
+      textColor.current.value = color?.textColor.slice(6, -1);
+      textColorInputText.current.defaultValue = color?.textColor.slice(6, -1);
     }
   };
 
