@@ -35,6 +35,7 @@ const Form = () => {
     <section className="bg-white h-screen max-h-screen py-10 px-20">
       <Link
         to="/demo"
+        target="_blank"
         className="z-50 bg-blue-400 fixed bottom-10 right-10 text-gray-50 py-2 px-2 rounded-md font-bold text-sm"
       >
         Halaman <br /> Preview
