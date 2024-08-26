@@ -90,7 +90,7 @@ const DataUsaha = () => {
           ref={inputHP}
           type="tel"
           id="no-hp"
-          pattern="[0-9\s]{13,19}"
+          pattern="[0-9\s]{11,20}"
           maxLength={15}
           placeholder="628xx xxxx xxxx"
           className={`${
