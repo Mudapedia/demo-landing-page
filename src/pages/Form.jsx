@@ -81,13 +81,14 @@ const Form = () => {
         ""
       )}
 
-      <Link
-        to="/demo"
+      <a
+        href="/demo"
         target="_blank"
+        rel="noreferrer"
         className="z-50 bg-blue-400 fixed bottom-10 right-10 text-gray-50 py-2 px-2 rounded-md font-bold text-sm"
       >
         Halaman <br /> Preview
-      </Link>
+      </a>
 
       <button
         className="z-10 bg-blue-400 fixed bottom-14 left-10 text-gray-50 py-2 px-2 rounded-md font-bold text-sm text-start"
