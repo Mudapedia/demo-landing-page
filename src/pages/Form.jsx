@@ -5,7 +5,6 @@ import ProductInput from "../components/formInput/ProductInput";
 import AboutInput from "../components/formInput/AboutInput";
 import testData from "../test";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 const Form = () => {
   const [showContact, setShowContact] = useState(false);
@@ -51,7 +50,7 @@ const Form = () => {
               >
                 <section className="flex items-center gap-2">
                   <img
-                    src="/public/iqbal.png"
+                    src="/iqbal.png"
                     alt="muiz"
                     className="w-10 rounded-full"
                   />
@@ -66,7 +65,7 @@ const Form = () => {
               >
                 <section className="flex items-center gap-2">
                   <img
-                    src="/public/muiz.jpg"
+                    src="/muiz.jpg"
                     alt="muiz"
                     className="w-10 rounded-full"
                   />
