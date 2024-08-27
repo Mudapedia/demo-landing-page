@@ -83,7 +83,8 @@ const Form = () => {
 
       <Link
         to="/demo"
-        className="z-10 bg-blue-400 fixed bottom-14 right-10 text-gray-50 py-2 px-2 rounded-md font-bold text-sm"
+        target="_blank"
+        className="z-50 bg-blue-400 fixed bottom-10 right-10 text-gray-50 py-2 px-2 rounded-md font-bold text-sm"
       >
         Halaman <br /> Preview
       </Link>
