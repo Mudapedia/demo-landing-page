@@ -51,7 +51,7 @@ const Form = () => {
               >
                 <section className="flex items-center gap-2">
                   <img
-                    src="/public/iqbal.png"
+                    src="/iqbal.png"
                     alt="muiz"
                     className="w-10 rounded-full"
                   />
@@ -66,7 +66,7 @@ const Form = () => {
               >
                 <section className="flex items-center gap-2">
                   <img
-                    src="/public/muiz.jpg"
+                    src="/muiz.jpg"
                     alt="muiz"
                     className="w-10 rounded-full"
                   />
